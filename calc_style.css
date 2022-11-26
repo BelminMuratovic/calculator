@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* FONT-SIZE */
+  --BUTTON-FS: 2rem;
+  --OUTPUT-PREVIOUS-FS: 1.5rem;
+  --OUTPUT-CURRENT-FS: 2.5rem;
+
+  /* COLOR */
+  --BGCOLOR-CENTER: rgb(189, 230, 239);
+  --BGCOLOR-END: rgb(121, 134, 239);
+  --BGCOLOR-BUTTON: rgb(255, 255, 255, 0.75);
+  --HOVER-BUTTON: #fff;
+  --ACTIVE-BUTTON: black;
+  --FONT-COLOR: #fff;
+  --BGCOLOR-OUTPUT: rgb(60, 60, 60, 0.6);
+  --OUTPUT-PREVIOUS-COLOR: rgb(255, 255, 255, 0.75);
+}
+body {
+  font-family: serif;
+  background-image: radial-gradient(var(--BGCOLOR-CENTER), var(--BGCOLOR-END));
+}
+
+.calculator {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator > button {
+  cursor: pointer;
+  font-size: var(--BUTTON-FS);
+  border: 1px solid white;
+  outline: none;
+  background-color: var(--BGCOLOR-BUTTON);
+}
+
+.calculator > button:hover {
+  background-color: var(--HOVER-BUTTON);
+}
+
+.calculator > button:active {
+  background-color: var(--ACTIVE-BUTTON);
+  color: var(--FONT-COLOR);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  background-color: var(--BGCOLOR-OUTPUT);
+  grid-column: span 4;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous {
+  color: var(--OUTPUT-PREVIOUS-COLOR);
+  font-size: var(--OUTPUT-PREVIOUS-FS);
+}
+
+.output .current {
+  color: var(--FONT-COLOR);
+  font-size: var(--OUTPUT-CURRENT-FS);
+}
